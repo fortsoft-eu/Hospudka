@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Binary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Binary.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonAbort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="ButtonAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Clos&amp;e</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonIgnore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="ButtonNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ButtonNoAll" xml:space="preserve">
+    <value>No to All</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonRetry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="ButtonSkip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="ButtonYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ButtonYesAll" xml:space="preserve">
+    <value>Yes to All</value>
+  </data>
+  <data name="CaptionAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="CaptionCapsLock" xml:space="preserve">
+    <value>CAPS</value>
+  </data>
+  <data name="CaptionEditRemoteConfig" xml:space="preserve">
+    <value>Edit Remote Configuration File</value>
+  </data>
+  <data name="CaptionEncoderDecoder" xml:space="preserve">
+    <value>Encoder / Decoder</value>
+  </data>
+  <data name="CaptionError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CaptionExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="CaptionFind" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="CaptionInsert" xml:space="preserve">
+    <value>INS</value>
+  </data>
+  <data name="CaptionNumLock" xml:space="preserve">
+    <value>NUM</value>
+  </data>
+  <data name="CaptionOverWrite" xml:space="preserve">
+    <value>OVR</value>
+  </data>
+  <data name="CaptionPrintOutput" xml:space="preserve">
+    <value>Print Output</value>
+  </data>
+  <data name="CaptionQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="CaptionScrollLock" xml:space="preserve">
+    <value>SCRL</value>
+  </data>
+  <data name="CaptionUpdateCheck" xml:space="preserve">
+    <value>Update Check</value>
+  </data>
+  <data name="Config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Config.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Hospudka deploy tool.</value>
+  </data>
+  <data name="Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Find.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelAvailableVersion" xml:space="preserve">
+    <value>Available version:</value>
+  </data>
+  <data name="LabelCurrentVersion" xml:space="preserve">
+    <value>Current version:</value>
+  </data>
+  <data name="LabelTargetFramework" xml:space="preserve">
+    <value>Target framework:</value>
+  </data>
+  <data name="LabelVersion" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="LabelWebsite" xml:space="preserve">
+    <value>Website:</value>
+  </data>
+  <data name="MenuItemAbout" xml:space="preserve">
+    <value>&amp;About...</value>
+  </data>
+  <data name="MenuItemAlwaysOnTop" xml:space="preserve">
+    <value>Always on &amp;Top</value>
+  </data>
+  <data name="MenuItemAnalyzeUrl" xml:space="preserve">
+    <value>Analy&amp;ze URL...</value>
+  </data>
+  <data name="MenuItemASCIIAlphanumeric" xml:space="preserve">
+    <value>To Alphanu&amp;meric ASCII Only</value>
+  </data>
+  <data name="MenuItemASCIIFull" xml:space="preserve">
+    <value>To All Possible Pri&amp;ntable ASCII</value>
+  </data>
+  <data name="MenuItemASCIISafeFileName" xml:space="preserve">
+    <value>To &amp;Safe File Name ASCII</value>
+  </data>
+  <data name="MenuItemASCIISafePath" xml:space="preserve">
+    <value>To Safe Pat&amp;h ASCII</value>
+  </data>
+  <data name="MenuItemCheckForUpdates" xml:space="preserve">
+    <value>Check for &amp;Updates...</value>
+  </data>
+  <data name="MenuItemClearInput" xml:space="preserve">
+    <value>Clea&amp;r Input</value>
+  </data>
+  <data name="MenuItemClearOutput" xml:space="preserve">
+    <value>Cle&amp;ar Output</value>
+  </data>
+  <data name="MenuItemCopy" xml:space="preserve">
+    <value>&amp;Copy</value>
+  </data>
+  <data name="MenuItemCopyAbout" xml:space="preserve">
+    <value>Copy &amp;About Text</value>
+  </data>
+  <data name="MenuItemCopyText" xml:space="preserve">
+    <value>&amp;Copy Text</value>
+  </data>
+  <data name="MenuItemCopyUrl" xml:space="preserve">
+    <value>&amp;Copy URL</value>
+  </data>
+  <data name="MenuItemCopyVersion" xml:space="preserve">
+    <value>&amp;Copy Version</value>
+  </data>
+  <data name="MenuItemCut" xml:space="preserve">
+    <value>Cu&amp;t</value>
+  </data>
+  <data name="MenuItemDecodeBase64" xml:space="preserve">
+    <value>Decode &amp;Base64 to UTF-8</value>
+  </data>
+  <data name="MenuItemDecodeUrl" xml:space="preserve">
+    <value>D&amp;ecode URL</value>
+  </data>
+  <data name="MenuItemDelete" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="MenuItemEdit" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="MenuItemEncodeBase64" xml:space="preserve">
+    <value>Encode UTF-8 to Base&amp;64</value>
+  </data>
+  <data name="MenuItemEncoderDecoder" xml:space="preserve">
+    <value>Enco&amp;der / Decoder...</value>
+  </data>
+  <data name="MenuItemEncodeRFC1738" xml:space="preserve">
+    <value>Encode According to RFC &amp;1738</value>
+  </data>
+  <data name="MenuItemEncodeRFC3986" xml:space="preserve">
+    <value>Encode According to RFC &amp;3986</value>
+  </data>
+  <data name="MenuItemExit" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="MenuItemExport" xml:space="preserve">
+    <value>&amp;Export...</value>
+  </data>
+  <data name="MenuItemFile" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="MenuItemFind" xml:space="preserve">
+    <value>&amp;Find...</value>
+  </data>
+  <data name="MenuItemFindNext" xml:space="preserve">
+    <value>Fi&amp;nd Next</value>
+  </data>
+  <data name="MenuItemFlip" xml:space="preserve">
+    <value>&amp;Flip</value>
+  </data>
+  <data name="MenuItemFocusInput" xml:space="preserve">
+    <value>Focus &amp;Input</value>
+  </data>
+  <data name="MenuItemFocusOutput" xml:space="preserve">
+    <value>Focus &amp;Output</value>
+  </data>
+  <data name="MenuItemHelp" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="MenuItemLaunchCalculator" xml:space="preserve">
+    <value>L&amp;aunch Calculator</value>
+  </data>
+  <data name="MenuItemLaunchCharMap" xml:space="preserve">
+    <value>Launch Character &amp;Map</value>
+  </data>
+  <data name="MenuItemLaunchNotepad" xml:space="preserve">
+    <value>Lau&amp;nch Notepad</value>
+  </data>
+  <data name="MenuItemLaunchWordPad" xml:space="preserve">
+    <value>Launch &amp;WordPad</value>
+  </data>
+  <data name="MenuItemOnlineHelp" xml:space="preserve">
+    <value>Online &amp;Help</value>
+  </data>
+  <data name="MenuItemOpenInDefaultBrowser" xml:space="preserve">
+    <value>&amp;Open in Default Browser...</value>
+  </data>
+  <data name="MenuItemOptions" xml:space="preserve">
+    <value>&amp;Options</value>
+  </data>
+  <data name="MenuItemParseUrl" xml:space="preserve">
+    <value>Parse UR&amp;L</value>
+  </data>
+  <data name="MenuItemPaste" xml:space="preserve">
+    <value>&amp;Paste</value>
+  </data>
+  <data name="MenuItemPrint" xml:space="preserve">
+    <value>&amp;Print...</value>
+  </data>
+  <data name="MenuItemPrintImage" xml:space="preserve">
+    <value>Print I&amp;mage...</value>
+  </data>
+  <data name="MenuItemPrintImagePreview" xml:space="preserve">
+    <value>Pri&amp;nt Image Preview...</value>
+  </data>
+  <data name="MenuItemPrintPreview" xml:space="preserve">
+    <value>Print Pre&amp;view...</value>
+  </data>
+  <data name="MenuItemSave" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="MenuItemSelectAll" xml:space="preserve">
+    <value>Select &amp;All</value>
+  </data>
+  <data name="MenuItemTools" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="MenuItemTurnOffMonitors" xml:space="preserve">
+    <value>Tu&amp;rn off the Monitors...</value>
+  </data>
+  <data name="MenuItemUndo" xml:space="preserve">
+    <value>&amp;Undo</value>
+  </data>
+  <data name="MenuItemWordWrap" xml:space="preserve">
+    <value>&amp;Word Wrap</value>
+  </data>
+  <data name="MessageApplicationCannotRun" xml:space="preserve">
+    <value>This applicacion cannot run on your system.</value>
+  </data>
+  <data name="MessageApplicationError" xml:space="preserve">
+    <value>An unexpected error has occured. Application will close now.</value>
+  </data>
+  <data name="MessageConfigHashEmptyError" xml:space="preserve">
+    <value>Error: Config hash cannot be empty.</value>
+  </data>
+  <data name="MessageConnecting" xml:space="preserve">
+    <value>Connecting...</value>
+  </data>
+  <data name="MessageCopiedToClipboard" xml:space="preserve">
+    <value>Selected text has been copied to clipboard.</value>
+  </data>
+  <data name="MessageExportFailed" xml:space="preserve">
+    <value>Export failed</value>
+  </data>
+  <data name="MessageExportFinished" xml:space="preserve">
+    <value>Export finished</value>
+  </data>
+  <data name="MessageExporting" xml:space="preserve">
+    <value>Exporting...</value>
+  </data>
+  <data name="MessageGeneratingPreview" xml:space="preserve">
+    <value>Generating preview...</value>
+  </data>
+  <data name="MessageInvalidHashError" xml:space="preserve">
+    <value>Error: Invalid hash.</value>
+  </data>
+  <data name="MessageInvalidResponse" xml:space="preserve">
+    <value>MessageInvalidResponse</value>
+  </data>
+  <data name="MessageMissingHashError" xml:space="preserve">
+    <value>Error: Missing hash.</value>
+  </data>
+  <data name="MessageOutOfMemoryError" xml:space="preserve">
+    <value>Error: Out of memory.</value>
+  </data>
+  <data name="MessagePreferencesSaved" xml:space="preserve">
+    <value>Preferences saved</value>
+  </data>
+  <data name="MessagePreviewGenerated" xml:space="preserve">
+    <value>Preview generated</value>
+  </data>
+  <data name="MessagePrinting" xml:space="preserve">
+    <value>Printing...</value>
+  </data>
+  <data name="MessagePrintingFailed" xml:space="preserve">
+    <value>Printing failed</value>
+  </data>
+  <data name="MessagePrintingFinished" xml:space="preserve">
+    <value>Printing finished</value>
+  </data>
+  <data name="MessageQuestionCancelPrinting" xml:space="preserve">
+    <value>Are you sure you want to cancel the current print operation?</value>
+  </data>
+  <data name="MessageReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="MessageSaveChanges" xml:space="preserve">
+    <value>Save changes to the remote configuration file?</value>
+  </data>
+  <data name="MessageSaved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="MessageSaving" xml:space="preserve">
+    <value>Saving...</value>
+  </data>
+  <data name="MessageSavingFailed" xml:space="preserve">
+    <value>Error: Saving failed</value>
+  </data>
+  <data name="MessageUpdateAvailable" xml:space="preserve">
+    <value>An update is available.</value>
+  </data>
+  <data name="MessageUpdateCheckError" xml:space="preserve">
+    <value>Error checking for updates. Please try again later.</value>
+  </data>
+  <data name="MessageUpToDate" xml:space="preserve">
+    <value>Application is up to date.</value>
+  </data>
+  <data name="OK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OK.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldError.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldOK.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldQuestion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldQuestion.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldQuestionRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldQuestionRed.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShieldWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShieldWarning.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolTipVisit" xml:space="preserve">
+    <value>Visit website</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>https://fortsoft.eu/</value>
+  </data>
+  <data name="MessageCreatingDirectory" xml:space="preserve">
+    <value>Creating directory: {0}...</value>
+  </data>
+  <data name="MessageDeletingFile" xml:space="preserve">
+    <value>Deleting file: {0}...</value>
+  </data>
+  <data name="MessageDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="MessageNothingToDo" xml:space="preserve">
+    <value>Nothing to do</value>
+  </data>
+  <data name="MessageRemovingDirectory" xml:space="preserve">
+    <value>Removing directory: {0}...</value>
+  </data>
+  <data name="MessageUploadingFile" xml:space="preserve">
+    <value>Uploading file: {0}...</value>
+  </data>
+  <data name="MessagePatching" xml:space="preserve">
+    <value>Patching...</value>
+  </data>
+  <data name="HtmlContentHideMenu" xml:space="preserve">
+    <value>Skrýt menu</value>
+  </data>
+  <data name="HtmlContentShowMenu" xml:space="preserve">
+    <value>Zobrazit menu</value>
+  </data>
+</root>
