@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.0.0.1
  */
 
 using System;
@@ -29,7 +29,7 @@ using System.Runtime.Serialization;
 
 namespace Hospudka {
 
-    [Serializable()]
+    [Serializable]
     public struct Search {
         public string searchString;
         public bool caseSensitive;
@@ -54,7 +54,7 @@ namespace Hospudka {
             this.regularExpression = regularExpression;
         }
 
-        public Search(SerializationInfo info, StreamingContext ctxt) {
+        private Search(SerializationInfo info, StreamingContext ctxt) {
             searchString = (string)info.GetValue("SearchString", typeof(string));
             caseSensitive = (bool)info.GetValue("CaseSensitive", typeof(bool));
             backward = (bool)info.GetValue("Backward", typeof(bool));

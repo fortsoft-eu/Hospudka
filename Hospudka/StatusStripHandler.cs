@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.0.0.1
  */
 
 using System;
@@ -758,6 +758,7 @@ namespace Hospudka {
             timer.Dispose();
             heartBeatTimer.Stop();
             heartBeatTimer.Dispose();
+            contextMenu.Dispose();
         }
 
         private static void ClipboardSetText(string text) {

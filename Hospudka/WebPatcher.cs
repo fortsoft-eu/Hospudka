@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.0.0.1
  */
 
 using FortSoft.Tools;
@@ -36,7 +36,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Hospudka {
-    public class WebPatcher : IDisposable {
+    public sealed class WebPatcher : IDisposable {
         private Dictionary<string, string> htmlFileNameSubstitutions;
         private long itemCount;
         private List<string> createdDirectories;

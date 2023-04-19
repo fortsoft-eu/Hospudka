@@ -98,6 +98,7 @@
       <DependentUpon>FindForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FtpWebHandler.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="PatchedEventArgs.cs" />
     <Compile Include="RemoteEventArgs.cs" />
     <Compile Include="LinkLabel.cs">

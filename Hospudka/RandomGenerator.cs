@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.0.0.1
  */
 
 using System;
@@ -31,7 +31,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 namespace FortSoft.Tools {
-    public class RandomGenerator : IDisposable {
+    public sealed class RandomGenerator : IDisposable {
         private const int byteSize = 0x100;
 
         private RandomNumberGenerator randomNumberGenerator;

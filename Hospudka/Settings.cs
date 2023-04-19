@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.0.0.1
  */
 
 using FortSoft.Tools;
@@ -182,7 +182,6 @@ namespace Hospudka {
                     configHandler = new ConfigHandler(this);
                 } catch (Exception exception) {
                     Debug.WriteLine(exception);
-                    ErrorLog.WriteLine(exception);
                     StringBuilder title = new StringBuilder()
                         .Append(Program.GetTitle())
                         .Append(Constants.Space)
