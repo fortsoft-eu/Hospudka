@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.1
+ * Version 1.0.0.2
  */
 
 using FortSoft.Tools;
@@ -162,9 +162,7 @@ namespace Hospudka {
         /// </summary>
         public string Config { get; set; }
 
-        /// <summary>
-        /// Loads remote configuration file.
-        /// </summary>
+        /// <summary>Loads remote configuration file.</summary>
         public void LoadConfig() {
             if (string.IsNullOrEmpty(ConfigHash)) {
                 if (SingleInstance.FocusRunning(Application.ExecutablePath, Program.GetTitle())) {
@@ -194,9 +192,7 @@ namespace Hospudka {
             }
         }
 
-        /// <summary>
-        /// Saves remote configuration file.
-        /// </summary>
+        /// <summary>Saves remote configuration file.</summary>
         public async Task<bool> SaveConfigAsync() {
             string responseString = await configHandler.SaveConfigAsync();
             XmlDocument xmlDocument = new XmlDocument();
@@ -214,9 +210,7 @@ namespace Hospudka {
         /// </summary>
         public void Clear() => persistentSettings.Clear();
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
+        /// <summary>Clean up any resources being used.</summary>
         public void Dispose() => persistentSettings.Dispose();
 
         /// <summary>
