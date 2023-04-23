@@ -21,11 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.2
+ * Version 1.1.0.0
  */
 
 using FortSoft.Tools;
 using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,12 @@ namespace Hospudka {
         /// The default value is false.
         /// </summary>
         public bool CheckForUpdates { get; set; }
+
+        /// <summary>
+        /// Represents the setting of whether to chime the gong after the
+        /// operation is complete. The default value is false.
+        /// </summary>
+        public bool ChimeWhenDone { get; set; }
 
         /// <summary>
         /// Represents whether visual styles will be used when rendering
@@ -142,14 +149,49 @@ namespace Hospudka {
         /// <summary>
         /// Loads the software application settings from the Windows registry.
         /// </summary>
-        private void Load() => ConfigHash = persistentSettings.Load("ConfigHash", ConfigHash);
+        private void Load() {
+            IntToBitSettings(persistentSettings.Load("BitSettings", BitSettingsToInt()));
+            ConfigHash = persistentSettings.Load("ConfigHash", ConfigHash);
+        }
 
         /// <summary>
         /// Saves the software application settings into the Windows registry.
         /// </summary>
         public void Save() {
+            persistentSettings.Save("BitSettings", BitSettingsToInt());
             persistentSettings.Save("ConfigHash", ConfigHash);
             Saved?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Expands an integer value into some boolean settings.
+        /// </summary>
+        private void IntToBitSettings(int i) {
+            BitArray bitArray = new BitArray(new int[] { i });
+            bool[] bitSettings = new bool[bitArray.Count];
+            bitArray.CopyTo(bitSettings, 0);
+            i = bitSettings.Length - 26;
+
+            ChimeWhenDone = bitSettings[--i];
+            UseDecimalPrefix = bitSettings[--i];
+            DisableThemes = bitSettings[--i];
+            PrintSoftMargins = bitSettings[--i];
+            StatusBarNotifOnly = bitSettings[--i];
+            CheckForUpdates = bitSettings[--i];
+        }
+
+        /// <summary>
+        /// Compacts some boolean settings into an integer value.
+        /// </summary>
+        private int BitSettingsToInt() {
+            StringBuilder stringBuilder = new StringBuilder(string.Empty.PadRight(26, Constants.Zero))
+                .Append(ChimeWhenDone ? 1 : 0)
+                .Append(UseDecimalPrefix ? 1 : 0)
+                .Append(DisableThemes ? 1 : 0)
+                .Append(PrintSoftMargins ? 1 : 0)
+                .Append(StatusBarNotifOnly ? 1 : 0)
+                .Append(CheckForUpdates ? 1 : 0);
+            return Convert.ToInt32(stringBuilder.ToString(), 2);
         }
 
         /// <summary>
@@ -274,6 +316,5 @@ namespace Hospudka {
                 BitConverter.ToUInt16(bytes, BitConverter.IsLittleEndian ? 2 : 0)
             };
         }
-
     }
 }

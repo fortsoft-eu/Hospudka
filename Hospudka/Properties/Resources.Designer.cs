@@ -343,6 +343,16 @@ namespace Hospudka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Gong {
+            get {
+                object obj = ResourceManager.GetObject("Gong", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skrýt menu.
         /// </summary>
         internal static string HtmlContentHideMenu {
@@ -925,6 +935,15 @@ namespace Hospudka.Properties {
         internal static string MessageCopiedToClipboard {
             get {
                 return ResourceManager.GetString("MessageCopiedToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Counting files....
+        /// </summary>
+        internal static string MessageCountingFiles {
+            get {
+                return ResourceManager.GetString("MessageCountingFiles", resourceCulture);
             }
         }
         

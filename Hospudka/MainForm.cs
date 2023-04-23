@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.1.0.0
  */
 
 using FortSoft.Tools;
@@ -38,6 +38,7 @@ namespace Hospudka {
     public partial class MainForm : Form {
         private Form dialog;
         private FtpWebHandler ftpWebHandler;
+        private Gong gong;
         private long removeCount, removedCount, totalCount, uploadCount;
         private PersistWindowState persistWindowState;
         private Settings settings;
@@ -45,6 +46,7 @@ namespace Hospudka {
         private WebPatcher webPatcher;
 
         public MainForm(Settings settings) {
+            gong = new Gong();
             this.settings = settings;
 
             Icon = Properties.Resources.Icon;
@@ -198,6 +200,7 @@ namespace Hospudka {
         }
 
         private void OnFormLoad(object sender, EventArgs e) {
+            checkBoxChime.Checked = settings.ChimeWhenDone;
             settings.Save();
             SetStatus();
         }
@@ -206,6 +209,7 @@ namespace Hospudka {
             if (InvokeRequired) {
                 Invoke(new EventHandler<PatchedEventArgs>(OnPatched), sender, e);
             } else {
+                SetMessage(Properties.Resources.MessageCountingFiles);
                 removeCount = e.Count;
                 uploadCount = e.Count;
                 totalCount = removeCount + uploadCount + 1;
@@ -285,6 +289,15 @@ namespace Hospudka {
                     Debug.WriteLine(exception);
                     ErrorLog.WriteLine(exception);
                 }
+                if (checkBoxChime.Checked) {
+                    try {
+                        gong.Chime();
+                    } catch (Exception exception) {
+                        Debug.WriteLine(exception);
+                        ErrorLog.WriteLine(exception);
+                    }
+                }
+                settings.ChimeWhenDone = checkBoxChime.Checked;
                 SetMessage(Properties.Resources.MessageDone);
                 Cursor = Cursors.Default;
             }
@@ -387,14 +400,14 @@ namespace Hospudka {
         }
 
         private void SetStatus() {
-            progressBar.Style = ProgressBarStyle.Continuous;
-            progressBar.Value = 0;
-            labelProgress.Text = string.Empty;
             if (webPatcher.IsSourceDirectoryEmpty()) {
                 SetMessage(Properties.Resources.MessageNothingToDo);
             } else {
                 SetMessage(Properties.Resources.MessageReady);
             }
+            progressBar.Style = ProgressBarStyle.Continuous;
+            progressBar.Value = 0;
+            labelProgress.Text = string.Empty;
         }
 
         private void ShowAbout(object sender, EventArgs e) {
