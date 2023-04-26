@@ -206,7 +206,7 @@
     <value>..\Resources\Config.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Hospudka deploy tool.</value>
+    <value>Hospudka deploy tool. Released under MIT License. This software uses portions of code under MIT License and portions of code under BSD License as shown below.</value>
   </data>
   <data name="Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Find.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -525,5 +525,8 @@
   </data>
   <data name="MessageCountingFiles" xml:space="preserve">
     <value>Counting files...</value>
+  </data>
+  <data name="CaptionInformation" xml:space="preserve">
+    <value>Information</value>
   </data>
 </root>

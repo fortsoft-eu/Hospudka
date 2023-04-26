@@ -251,6 +251,15 @@ namespace Hospudka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string CaptionInformation {
+            get {
+                return ResourceManager.GetString("CaptionInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INS.
         /// </summary>
         internal static string CaptionInsert {
@@ -324,7 +333,7 @@ namespace Hospudka.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hospudka deploy tool..
+        ///   Looks up a localized string similar to Hospudka deploy tool. Released under MIT License. This software uses portions of code under MIT License and portions of code under BSD License as shown below..
         /// </summary>
         internal static string Description {
             get {

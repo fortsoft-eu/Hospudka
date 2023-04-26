@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.1
+ * Version 1.1.0.1
  */
 
 using FortSoft.Tools;
@@ -585,9 +585,7 @@ namespace Hospudka {
                         Patch();
                         EmptySourceDirectoryAsync();
                     }
-                    if (!IsDestinationDirectoryEmpty()) {
-                        Patched?.Invoke(this, new PatchedEventArgs(CountItems()));
-                    }
+                    Patched?.Invoke(this, new PatchedEventArgs(CountItems()));
                 } catch (Exception exception) {
                     Debug.WriteLine(exception);
                     ErrorLog.WriteLine(exception);

@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.0.0
+ * Version 1.1.0.1
  */
 
 using FortSoft.Tools;
@@ -105,17 +105,7 @@ namespace Hospudka {
             try {
                 Process.Start(Application.ExecutablePath, Constants.CommandLineSwitchWE);
             } catch (Exception exception) {
-                Debug.WriteLine(exception);
-                ErrorLog.WriteLine(exception);
-                StringBuilder title = new StringBuilder()
-                    .Append(Program.GetTitle())
-                    .Append(Constants.Space)
-                    .Append(Constants.EnDash)
-                    .Append(Constants.Space)
-                    .Append(Properties.Resources.CaptionError);
-                dialog = new MessageForm(this, exception.Message, title.ToString(), MessageForm.Buttons.OK, MessageForm.BoxIcon.Error);
-                dialog.HelpRequested += new HelpEventHandler(OpenHelp);
-                dialog.ShowDialog(this);
+                ShowException(exception);
             }
         }
 
@@ -166,6 +156,7 @@ namespace Hospudka {
                 }
             } else {
                 SetStatus();
+                ShowNothingToDo();
             }
         }
 
@@ -173,20 +164,7 @@ namespace Hospudka {
 
         private void OnFileSystemWatcher(object sender, FileSystemEventArgs e) => SetStatus();
 
-        private void OnFileSystemWatcherError(object sender, ErrorEventArgs e) {
-            Exception exception = e.GetException();
-            Debug.WriteLine(exception);
-            ErrorLog.WriteLine(exception);
-            StringBuilder title = new StringBuilder()
-                .Append(Program.GetTitle())
-                .Append(Constants.Space)
-                .Append(Constants.EnDash)
-                .Append(Constants.Space)
-                .Append(Properties.Resources.CaptionError);
-            dialog = new MessageForm(this, exception.Message, title.ToString(), MessageForm.Buttons.OK, MessageForm.BoxIcon.Error);
-            dialog.HelpRequested += new HelpEventHandler(OpenHelp);
-            dialog.ShowDialog(this);
-        }
+        private void OnFileSystemWatcherError(object sender, ErrorEventArgs e) => ShowException(e.GetException());
 
         private void OnFormActivated(object sender, EventArgs e) {
             if (dialog != null) {
@@ -208,7 +186,7 @@ namespace Hospudka {
         private void OnPatched(object sender, PatchedEventArgs e) {
             if (InvokeRequired) {
                 Invoke(new EventHandler<PatchedEventArgs>(OnPatched), sender, e);
-            } else {
+            } else if (e.Count > 0) {
                 SetMessage(Properties.Resources.MessageCountingFiles);
                 removeCount = e.Count;
                 uploadCount = e.Count;
@@ -223,6 +201,8 @@ namespace Hospudka {
                     .ToString();
                 removedCount = 0;
                 ftpWebHandler.EmptyRemoteDirectoryAsync();
+            } else {
+                ShowNothingToDo();
             }
         }
 
@@ -428,6 +408,15 @@ namespace Hospudka {
                 .Append(Constants.Space)
                 .Append(Properties.Resources.CaptionError);
             dialog = new MessageForm(this, exception.Message, title.ToString(), MessageForm.Buttons.OK, MessageForm.BoxIcon.Error);
+            dialog.HelpRequested += new HelpEventHandler(OpenHelp);
+            dialog.ShowDialog(this);
+        }
+
+        private void ShowNothingToDo() {
+            StringBuilder message = new StringBuilder(Properties.Resources.MessageNothingToDo)
+                .Append(Constants.Period);
+            dialog = new MessageForm(this, message.ToString(), Properties.Resources.CaptionInformation, MessageForm.Buttons.OK,
+                MessageForm.BoxIcon.Information);
             dialog.HelpRequested += new HelpEventHandler(OpenHelp);
             dialog.ShowDialog(this);
         }
