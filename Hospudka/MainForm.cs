@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.0.1
+ * Version 1.1.1.0
  */
 
 using FortSoft.Tools;
@@ -60,6 +60,7 @@ namespace Hospudka {
             ftpWebHandler.UploadItem += new EventHandler<RemoteEventArgs>(OnUploadItem);
 
             webPatcher = new WebPatcher();
+            webPatcher.Counting += new EventHandler(OnCounting);
             webPatcher.Error += new ErrorEventHandler(OnError);
             webPatcher.Patched += new EventHandler<PatchedEventArgs>(OnPatched);
 
@@ -160,6 +161,14 @@ namespace Hospudka {
             }
         }
 
+        private void OnCounting(object sender, EventArgs e) {
+            if (InvokeRequired) {
+                Invoke(new EventHandler(OnCounting), sender, e);
+            } else {
+                SetMessage(Properties.Resources.MessageCountingFiles);
+            }
+        }
+
         private void OnError(object sender, ErrorEventArgs e) => ShowException(e.GetException());
 
         private void OnFileSystemWatcher(object sender, FileSystemEventArgs e) => SetStatus();
@@ -187,7 +196,6 @@ namespace Hospudka {
             if (InvokeRequired) {
                 Invoke(new EventHandler<PatchedEventArgs>(OnPatched), sender, e);
             } else if (e.Count > 0) {
-                SetMessage(Properties.Resources.MessageCountingFiles);
                 removeCount = e.Count;
                 uploadCount = e.Count;
                 totalCount = removeCount + uploadCount + 1;
@@ -200,6 +208,7 @@ namespace Hospudka {
                     .Append(Constants.Percent)
                     .ToString();
                 removedCount = 0;
+                SetMessage(Properties.Resources.MessageConnecting);
                 ftpWebHandler.EmptyRemoteDirectoryAsync();
             } else {
                 ShowNothingToDo();

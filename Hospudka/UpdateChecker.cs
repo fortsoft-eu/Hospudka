@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.1.1.0
  */
 
 using System;
@@ -72,8 +72,8 @@ namespace Hospudka {
                     if (dialog == null || !dialog.Visible) {
                         UpdateCheckForm updateCheckForm = new UpdateCheckForm(null);
                         updateCheckForm.Load += new EventHandler(OnLoad);
-                        updateCheckForm.StateSet += new EventHandler<UpdateCheckEventArgs>((sender, e) =>
-                            StateChanged?.Invoke(sender, e));
+                        updateCheckForm.StateSet += new EventHandler<UpdateCheckEventArgs>(
+                            (sender, e) => StateChanged?.Invoke(sender, e));
                         updateCheckForm.HelpRequested += new HelpEventHandler((sender, hlpevent) => Help?.Invoke(sender, hlpevent));
                         dialog = updateCheckForm;
                         StateChanged?.Invoke(this,

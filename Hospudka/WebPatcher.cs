@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.0.1
+ * Version 1.1.1.0
  */
 
 using FortSoft.Tools;
@@ -43,6 +43,7 @@ namespace Hospudka {
         private RandomGenerator randomGenerator;
         private string trailingSlash, trailingSlashLeadingSpace;
 
+        public event EventHandler Counting;
         public event ErrorEventHandler Error;
         public event EventHandler<PatchedEventArgs> Patched;
 
@@ -275,6 +276,7 @@ namespace Hospudka {
         }
 
         private long CountItems() {
+            Counting?.Invoke(this, EventArgs.Empty);
             itemCount = 0;
             CountItemsRecursive(DestinationPath);
             return itemCount;
