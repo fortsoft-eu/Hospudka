@@ -37,6 +37,11 @@ namespace Hospudka {
         public const int MaximumSearches = 30;
 
         /// <summary>
+        /// ProgressBarForm smooth maximum per cent.
+        /// </summary>
+        public const int ProgressBarSmoothMaximum = 95;
+
+        /// <summary>
         /// Maximum internal width in pixels for calculations of the ProgressBar
         /// in the StatusStrip regardless of displayed size.
         /// </summary>

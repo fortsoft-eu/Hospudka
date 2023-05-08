@@ -336,7 +336,7 @@ namespace Hospudka {
                     if (temp > Constants.StripProgressBarInterval * 2) {
                         timer.Interval = temp / 2;
                     }
-                    if ((float)progressBar.Value / progressBar.Maximum < 0.9f) {
+                    if ((float)progressBar.Value / progressBar.Maximum < Constants.ProgressBarSmoothMaximum / 100f) {
                         return;
                     }
                     timer.Stop();
