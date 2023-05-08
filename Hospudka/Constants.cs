@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.1.1.1
  */
 
 namespace Hospudka {
@@ -220,7 +220,6 @@ namespace Hospudka {
         public const string LibWebPX86FileName = "libwebp_x86.dll";
         public const string LogoFileName = "logo.png";
         public const string MonospaceFontName = "Consolas";
-        public const string Muted = "Muted";
         public const string NotepadFileName = "notepad.exe";
         public const string NumberFormatSystem = "[system]";
         public const string OneDecimalDigitFormat = "f1";

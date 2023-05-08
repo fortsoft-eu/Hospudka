@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.1
+ * Version 1.1.1.1
  */
 
 using System;
@@ -242,7 +242,6 @@ namespace Hospudka {
             settings.Saved += new EventHandler((sender, e) => {
                 SetRenderMode();
                 SetBorderStyle();
-                SetMuted();
                 SetZoomLevel();
                 SetDataSize();
             });
@@ -552,25 +551,6 @@ namespace Hospudka {
                         labelSearchResult.ForeColor = Color.Crimson;
                         labelSearchResult.Text = Constants.StripSearchNotFound;
                     }
-                    SetStatusStripControlsSize();
-                }
-            } catch (Exception exception) {
-                Debug.WriteLine(exception);
-                ErrorLog.WriteLine(exception);
-            }
-        }
-
-        public void SetMuted(bool muted) {
-            this.muted = muted;
-            SetMuted();
-        }
-
-        private void SetMuted() {
-            try {
-                if (statusStrip.InvokeRequired) {
-                    statusStrip.Invoke(new StatusStripHandlerCallback(SetMuted));
-                } else {
-                    labelMuted.Text = muted ? Constants.Muted : string.Empty;
                     SetStatusStripControlsSize();
                 }
             } catch (Exception exception) {
