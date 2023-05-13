@@ -33,7 +33,6 @@ using System.Windows.Forms;
 
 namespace Hospudka {
     public sealed class StatusStripHandler : IDisposable {
-        private bool muted;
         private ContextMenu contextMenu;
         private DisplayMode displayMode;
         private double zoomLevel;
