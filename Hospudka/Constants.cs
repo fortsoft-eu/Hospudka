@@ -104,19 +104,9 @@ namespace Hospudka {
         /// <summary>
         /// Windows API constants.
         /// </summary>
-        public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
-        public const int MOUSEEVENTF_RIGHTDOWN = 0x08;
-        public const int MOUSEEVENTF_RIGHTUP = 0x10;
         public const int SC_CLOSE = 0xF060;
         public const int SC_MONITORPOWER = 0xF170;
-        public const int SC_SCREENSAVE = 0xF140;
-        public const int SC_TASKLIST = 0xF130;
-        public const int WM_CLEAR = 0x0303;
-        public const int WM_COPY = 0x0301;
-        public const int WM_CUT = 0x0300;
-        public const int WM_HSCROLL = 0x114;
-        public const int WM_PASTE = 0x0302;
         public const int WM_SYSCOMMAND = 0x112;
 
         /// <summary>
@@ -127,15 +117,11 @@ namespace Hospudka {
         public const char CarriageReturn = '\r';
         public const char ClosingCurly = '}';
         public const char Colon = ':';
-        public const char Comma = ',';
-        public const char Ellipsis = '…';
-        public const char EmDash = '—';
         public const char EnDash = '–';
         public const char EqualSign = '=';
         public const char GreaterThan = '>';
         public const char Hyphen = '-';
         public const char LineFeed = '\n';
-        public const char MinusSign = '−';
         public const char OpeningBracket = '[';
         public const char OpeningCurly = '{';
         public const char Percent = '%';
@@ -145,7 +131,6 @@ namespace Hospudka {
         public const char Semicolon = ';';
         public const char Slash = '/';
         public const char Space = ' ';
-        public const char Underscore = '_';
         public const char VerticalBar = '|';
         public const char VerticalTab = '\t';
         public const char Zero = '0';
