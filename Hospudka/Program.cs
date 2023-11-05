@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.0.0.0
+ * Version 1.1.1.2
  */
 
 using FortSoft.Tools;
@@ -85,6 +85,7 @@ namespace Hospudka {
                 }
             }
         }
+
         public static string GetTitle() {
             object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
             string title = null;

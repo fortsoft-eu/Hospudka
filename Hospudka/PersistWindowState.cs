@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 2.3.3.0
+ * Version 2.3.4.0
  */
 
 using Microsoft.Win32;
@@ -269,7 +269,8 @@ namespace FortSoft.Tools {
         /// Checks if the parent form immediately follows the reference form in z-order.
         /// </summary>
         /// <param name="hWnd">Reference form window handle.</param>
-        private bool IsNextWindow(IntPtr hWnd) {
+        /// <param name="skip">An array of form handles to be skipped.</param>
+        private bool IsNextWindow(IntPtr hWnd, IntPtr[] skip) {
             IntPtr window = GetTopWindow(GetDesktopWindow());
             int thisWindow = -1, i = 0;
 
@@ -277,7 +278,7 @@ namespace FortSoft.Tools {
                 if (thisWindow > -1 && thisWindow + 1 < i) {
                     break;
                 }
-                if (!IsWindowVisible(window)) {
+                if (!IsWindowVisible(window) || skip != null && skip.Contains(window)) {
                     continue;
                 }
                 if (thisWindow > 0 && window.Equals(parentHandle)) {
@@ -525,12 +526,21 @@ namespace FortSoft.Tools {
         /// reference form.
         /// </summary>
         /// <param name="hWnd">Reference form window handle.</param>
-        public void SetVisible(IntPtr hWnd) {
+        public void SetVisible(IntPtr hWnd) => SetVisible(hWnd, null);
+
+        /// <summary>
+        /// Thread-safe sets the parent form visible for the user and brings it
+        /// to the front before other windows on the user's desktop except the
+        /// reference form and except the provided forms.
+        /// </summary>
+        /// <param name="hWnd">Reference form window handle.</param>
+        /// <param name="skip">An array of form handles to be skipped.</param>
+        public void SetVisible(IntPtr hWnd, IntPtr[] skip) {
             if (!parentHandle.Equals(IntPtr.Zero)) {
                 if (!IsIconic(parentHandle).Equals(0)) {
                     ShowWindow(parentHandle, SW_RESTORE);
                     SetForegroundWindow(hWnd);
-                } else if (!IsNextWindow(hWnd)) {
+                } else if (!IsNextWindow(hWnd, skip)) {
                     SetForegroundWindow(parentHandle);
                     SetForegroundWindow(hWnd);
                 }
